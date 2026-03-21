@@ -1,0 +1,16 @@
+@startuml
+class CodeAnalyzerServer {
+  - server: Server
+  + analyzeCode(code: string)
+  + generateMermaid(code: string)
+  + extractJSDoc(code: string)
+  + start()
+}
+
+class TSCompilerAPI {
+  + createSourceFile()
+  + forEachChild()
+}
+
+CodeAnalyzerServer ..> TSCompilerAPI : uses
+@enduml
